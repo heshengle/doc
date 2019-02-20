@@ -171,6 +171,8 @@ class UserController extends BaseController {
 		session("login_user" , NULL);
 		cookie('cookie_token',NULL);
 		session(null);
-		$this->message(L('logout_succeeded'),U('Home/index/index'));
+        header("location:./web/#/user/login");
+        exit();
+		$this->message(L('logout_succeeded'),U('Home/user/login'));
 	}
 }
